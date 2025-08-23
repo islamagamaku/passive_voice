@@ -195,41 +195,13 @@
           <p><b>Present Simple:</b> Active: He cleans the room. → Passive: The room is cleaned by him.</p>
           <p><b>Past Simple:</b> Active: She made a cake. → Passive: A cake was made by her.</p>
         `;
-      } else if (page === "exercise") {
-        content.innerHTML = `
-          <h2>Exercise</h2>
-          <div class="exercise">
-            <p><b>1.</b> They drink coffee every morning. (Passive?)</p>
-      <label><input type="radio" name="q1" value="wrong"> Coffee is drank every morning by them.</label><br>
-      <label><input type="radio" name="q1" value="correct"> Coffee is drunk every morning by them.</label><br>
-      <label><input type="radio" name="q1" value="wrong"> Coffee was drunk every morning by them.</label><br>
-      <p id="ans1" style="color:red; display:none;"></p>
-      <p><b>2.</b> She wrote a letter yesterday. (Passive?)</p>
-      <label><input type="radio" name="q2" value="wrong"> A letter is written by her yesterday.</label><br>
-      <label><input type="radio" name="q2" value="correct"> A letter was written by her yesterday.</label><br>
-      <label><input type="radio" name="q2" value="wrong"> A letter were written by her yesterday.</label><br>
-      <p id="ans2" style="display:none;"></p>
-       <p><b>3.</b> The teacher explains the lesson. (Passive?)</p>
-      <label><input type="radio" name="q3" value="wrong"> The lesson was explained by the teacher.</label><br>
-      <label><input type="radio" name="q3" value="correct"> The lesson is explained by the teacher.</label><br>
-      <label><input type="radio" name="q3" value="wrong"> The lesson has explained by the teacher.</label><br>
-      <p id="ans3" style="display:none;"></p>
-            <br>
-      <button class="submit" onclick="checkAnswers()">Periksa Jawaban</button>
-          </div>
-        `;
-      } else if (page === "contact") {
-        content.innerHTML = `
-          <h2>Contact</h2>
-          <p>Email: <a href="mailto:ahmad@example.com">ahmad@example.com</a></p>
-          <p>Instagram: <a href="https://instagram.com/ahmad" target="_blank">@ahmad</a></p>
-        `;
-      }
-      else if (page === "test") {
+      } // Di fungsi showPage
+else if (page === "exercise") {
   content.innerHTML = `
-    <h2>Test - Essay</h2>
+    <h2>Exercise - Essay</h2>
     <div class="exercise">
-      <p> Ubah kalimat soal dibawah menjadi Passive Voice:</p>
+      <p>Ubah kalimat berikut menjadi Passive Voice:</p>
+
       <p><i>1. Ali is reading a novel.</i></p>
       <textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
 
@@ -245,6 +217,40 @@
     </div>
   `;
 }
+
+else if (page === "test") {
+  content.innerHTML = `
+    <h2>Test - Pilihan Ganda</h2>
+    <div class="exercise">
+      <p><b>1.</b> They drink coffee every morning. (Passive?)</p>
+      <label><input type="radio" name="q1" value="wrong"> Coffee is drank every morning by them.</label><br>
+      <label><input type="radio" name="q1" value="correct"> Coffee is drunk every morning by them.</label><br>
+      <label><input type="radio" name="q1" value="wrong"> Coffee was drunk every morning by them.</label><br>
+      <p id="ans1" style="color:red; display:none;"></p>
+
+      <p><b>2.</b> She wrote a letter yesterday. (Passive?)</p>
+      <label><input type="radio" name="q2" value="wrong"> A letter is written by her yesterday.</label><br>
+      <label><input type="radio" name="q2" value="correct"> A letter was written by her yesterday.</label><br>
+      <label><input type="radio" name="q2" value="wrong"> A letter were written by her yesterday.</label><br>
+      <p id="ans2" style="display:none;"></p>
+
+      <p><b>3.</b> The teacher explains the lesson. (Passive?)</p>
+      <label><input type="radio" name="q3" value="wrong"> The lesson was explained by the teacher.</label><br>
+      <label><input type="radio" name="q3" value="correct"> The lesson is explained by the teacher.</label><br>
+      <label><input type="radio" name="q3" value="wrong"> The lesson has explained by the teacher.</label><br>
+      <p id="ans3" style="display:none;"></p>
+
+      <br>
+      <button class="submit" onclick="checkAnswers()">Periksa Jawaban</button>
+    </div>
+  `;
+}else if (page === "contact") {
+        content.innerHTML = `
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:ahmad@example.com">ahmad@example.com</a></p>
+          <p>Instagram: <a href="https://instagram.com/ahmad" target="_blank">@ahmad</a></p>
+        `;
+      }
 
     }
 
@@ -316,5 +322,6 @@
 
 </body>
 </html>
+
 
 
