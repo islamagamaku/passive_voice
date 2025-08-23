@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Belajar - Passive Voice</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+    }
+
+    /* Sidebar */
+    aside {
+      width: 260px;
+      background: #34495e;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      min-height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+    aside h3 {
+      margin-top: 0;
+      font-size: 1.1em;
+      border-bottom: 1px solid #555;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    aside button {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      background: none;
+      border: none;
+      color: #ecf0f1;
+      text-align: left;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      transition: background 0.3s;
+    }
+    aside button:hover {
+      background: #1abc9c;
+    }
+    aside .submenu {
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+    aside .submenu button {
+      font-size: 14px;
+      padding-left: 20px;
+      color: #bdc3c7;
+    }
+    aside .submenu button:hover {
+      color: #fff;
+    }
+
+    /* Konten */
+    .content {
+      flex: 1;
+      padding: 25px;
+      background: #fff;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .content h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+    .content p {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+    .exercise {
+      background: #f4f9ff;
+      padding: 15px;
+      border-left: 5px solid #1abc9c;
+      border-radius: 6px;
+      margin: 15px 0;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button.submit {
+      background: #1abc9c;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button.submit:hover {
+      background: #16a085;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Belajar Passive Voice</h1>
+    <p>Materi Bahasa Inggris dengan penjelasan & latihan</p>
+  </header>
+
+  <main>
+    <aside>
+      <h3>Menu</h3>
+      <button onclick="showPage('home')">🏠 Home</button>
+      <button onclick="showPage('search')">🔍 Search</button>
+      <button onclick="showPage('passive')">📘 Passive Voice</button>
+      <div class="submenu">
+ <div class="submenu">
+  <button onclick="showPage('what')">- What is Passive Voice</button>
+  <button onclick="showPage('example')">- Example</button>
+  <button onclick="showPage('use')">- Use the Passive Voice</button>
+  <button onclick="showPage('how')">- How to Change Active</button>
+  <button onclick="showPage('tenses')">- Tenses</button>
+  <button onclick="showPage('exercise')">- Exercise</button>
+  <button onclick="showPage('test')">- Test</button> <!-- ✅ Tambahan -->
+</div>
+
+      </div>
+      <button onclick="showPage('contact')">📩 Contact</button>
+    </aside>
+
+    <div class="content" id="page-content">
+      <h2>Selamat Datang</h2>
+      <p>Ini adalah blog pembelajaran Passive Voice. Silakan pilih menu di samping untuk melihat materi.</p>
+    </div>
+  </main>
+
+  <script>
+    function showPage(page) {
+      let content = document.getElementById("page-content");
+      if (page === "home") {
+        content.innerHTML = `
+          <h2>Halaman Utama</h2>
+          <p>Selamat datang di blog belajar Passive Voice. Blog ini berisi materi singkat, contoh, dan latihan soal.</p>
+        `;
+      } else if (page === "search") {
+        content.innerHTML = `
+          <h2>Search</h2>
+          <p>Fitur pencarian akan segera hadir.</p>
+        `;
+      } else if (page === "what") {
+        content.innerHTML = `
+          <h2>What is Passive Voice?</h2>
+          <p>Passive voice adalah bentuk kalimat dimana subjek menerima aksi, bukan melakukan aksi.</p>
+          <p>Contoh: <i>The cake was eaten by Ali.</i></p>
+        `;
+      } else if (page === "example") {
+        content.innerHTML = `
+          <h2>Examples</h2>
+          <ul>
+            <li>Active: She writes a letter. → Passive: A letter is written by her.</li>
+            <li>Active: They built a house. → Passive: A house was built by them.</li>
+          </ul>
+        `;
+      } else if (page === "use") {
+        content.innerHTML = `
+          <h2>Use of Passive Voice</h2>
+          <p>Passive voice digunakan saat pelaku tidak penting, tidak diketahui, atau ingin menekankan objek.</p>
+        `;
+      } else if (page === "how") {
+        content.innerHTML = `
+          <h2>How to Change Active to Passive</h2>
+          <p>Rumus umum: <b>Object + to be + V3 (past participle) + by + Subject</b></p>
+        `;
+      } else if (page === "tenses") {
+        content.innerHTML = `
+          <h2>Passive Voice in Tenses</h2>
+          <p><b>Present Simple:</b> Active: He cleans the room. → Passive: The room is cleaned by him.</p>
+          <p><b>Past Simple:</b> Active: She made a cake. → Passive: A cake was made by her.</p>
+        `;
+      } else if (page === "exercise") {
+        content.innerHTML = `
+          <h2>Exercise</h2>
+          <div class="exercise">
+            <p><b>1.</b> They drink coffee every morning. (Passive?)</p>
+      <label><input type="radio" name="q1" value="wrong"> Coffee is drank every morning by them.</label><br>
+      <label><input type="radio" name="q1" value="correct"> Coffee is drunk every morning by them.</label><br>
+      <label><input type="radio" name="q1" value="wrong"> Coffee was drunk every morning by them.</label><br>
+      <p id="ans1" style="color:red; display:none;"></p>
+      <p><b>2.</b> She wrote a letter yesterday. (Passive?)</p>
+      <label><input type="radio" name="q2" value="wrong"> A letter is written by her yesterday.</label><br>
+      <label><input type="radio" name="q2" value="correct"> A letter was written by her yesterday.</label><br>
+      <label><input type="radio" name="q2" value="wrong"> A letter were written by her yesterday.</label><br>
+      <p id="ans2" style="display:none;"></p>
+       <p><b>3.</b> The teacher explains the lesson. (Passive?)</p>
+      <label><input type="radio" name="q3" value="wrong"> The lesson was explained by the teacher.</label><br>
+      <label><input type="radio" name="q3" value="correct"> The lesson is explained by the teacher.</label><br>
+      <label><input type="radio" name="q3" value="wrong"> The lesson has explained by the teacher.</label><br>
+      <p id="ans3" style="display:none;"></p>
+            <br>
+      <button class="submit" onclick="checkAnswers()">Periksa Jawaban</button>
+          </div>
+        `;
+      } else if (page === "contact") {
+        content.innerHTML = `
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:ahmad@example.com">ahmad@example.com</a></p>
+          <p>Instagram: <a href="https://instagram.com/ahmad" target="_blank">@ahmad</a></p>
+        `;
+      }
+      else if (page === "test") {
+  content.innerHTML = `
+    <h2>Test - Essay</h2>
+    <div class="exercise">
+      <p><b>1.</b> Ubah kalimat berikut menjadi Passive Voice:</p>
+      <p><i>Ali is reading a novel.</i></p>
+      <textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+
+      <p><b>2.</b> Ubah kalimat berikut menjadi Passive Voice:</p>
+      <p><i>They will finish the project tomorrow.</i></p>
+      <textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+
+      <p><b>3.</b> Ubah kalimat berikut menjadi Passive Voice:</p>
+      <p><i>The students are writing the report.</i></p>
+      <textarea id="essay3" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+
+      <br>
+      <button class="submit" onclick="checkEssay()">Periksa Jawaban</button>
+      <p id="essayResult"></p>
+    </div>
+  `;
+}
+
+    }
+
+    function checkAnswers() {
+    let score = 0;
+
+    // Soal dan jawaban benar
+    let correctAnswers = {
+      q1: "Coffee is drunk every morning by them.",
+      q2: "A letter was written by her yesterday.",
+      q3: "The lesson is explained by the teacher."
+    };
+
+    // Loop untuk tiap soal
+    for (let i = 1; i <= 3; i++) {
+      let q = document.querySelector('input[name="q'+i+'"]:checked');
+      let ans = document.getElementById("ans"+i);
+
+      if (q) {
+        if (q.value === "correct") {
+          ans.style.color = "green";
+          ans.innerText = "✅ Jawaban benar!";
+          ans.style.display = "block";
+          score++;
+        } else {
+          ans.style.color = "red";
+          ans.innerHTML = "❌ Jawaban salah. <br> Jawaban benar: <b>" + correctAnswers["q"+i] + "</b>";
+          ans.style.display = "block";
+        }
+      } else {
+        ans.style.color = "orange";
+        ans.innerText = "⚠️ Belum memilih jawaban.";
+        ans.style.display = "block";
+      }
+    }
+
+    alert("Skor kamu: " + score + "/3");
+  }
+
+  function checkEssay() {
+  let answers = {
+    essay1: "A novel is being read by Ali.",
+    essay2: "The project will be finished tomorrow by them.",
+    essay3: "The report is being written by the students."
+  };
+
+  let score = 0;
+  let total = 3;
+  let resultText = "";
+
+  for (let i = 1; i <= total; i++) {
+    let userAnswer = document.getElementById("essay"+i).value.trim();
+    if (userAnswer.toLowerCase() === answers["essay"+i].toLowerCase()) {
+      resultText += `<p style="color:green">✅ Soal ${i}: Benar</p>`;
+      score++;
+    } else {
+      resultText += `<p style="color:red">❌ Soal ${i}: Salah<br>Jawaban benar: <b>${answers["essay"+i]}</b></p>`;
+    }
+  }
+
+  document.getElementById("essayResult").innerHTML = `
+    <h3>Hasil:</h3>
+    ${resultText}
+    <p><b>Skor: ${score}/${total}</b></p>
+  `;
+}
+
+  </script>
+
+</body>
+</html>
