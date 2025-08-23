@@ -114,12 +114,23 @@
       aside.active { display: block; }
       .menu-toggle { display: block; }
     }
+    #searchBox {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 15px;
+}
+.highlight {
+  background: yellow;
+  font-weight: bold;
+}
   </style>
 </head>
 <body>
   <header>
     <h1>Passive Voice</h1>
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  <input type="text" id="searchBox" placeholder="Cari materi..." onkeyup="searchContent()">
+  <span class="menu-toggle" onclick="toggleMenu()">☰</span>>
   </header>
 
   <main>
@@ -337,6 +348,7 @@
         <p><i>1. Tom opens the door.</i></p><textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
         <p><i>2. Tom is opening the door.</i></p><textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
         <p><i>3. Tom has opened the door.</i></p><textarea id="essay3
+
 
 
 
