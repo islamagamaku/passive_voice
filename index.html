@@ -303,6 +303,24 @@
 </body>
 </html>
   <script>
+    function searchContent() {
+  let keyword = document.getElementById("searchBox").value.toLowerCase();
+  let content = document.getElementById("page-content");
+
+  // reset highlight dulu
+  let text = content.innerText;
+  let html = content.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
+
+  if (keyword.trim() === "") {
+    content.innerHTML = html; // kosong → reset
+    return;
+  }
+
+  // regex untuk highlight kata yang cocok
+  let regex = new RegExp("(" + keyword + ")", "gi");
+  content.innerHTML = html.replace(regex, `<span class="highlight">$1</span>`);
+    }
+    
     function toggleMenu() {
       document.getElementById('sidebar').classList.toggle('active');
     }
@@ -348,6 +366,7 @@
         <p><i>1. Tom opens the door.</i></p><textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
         <p><i>2. Tom is opening the door.</i></p><textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
         <p><i>3. Tom has opened the door.</i></p><textarea id="essay3
+
 
 
 
