@@ -200,18 +200,22 @@
       <p><b>Going to Future Tense:</b> <br/>Active: Subject + am/is/are + going to + verb-1 + Object = Marry is go ing to help the boy <br/>Passive: Object + am/is/are + going to be + verb-3 + by + Subject = The boy is going to be helped by Marry</p>
       <p><b>Future Perfect Tense:</b> <br/>Active: Subject + will have + verb-3 + Object = Marry will have helped the boy <br/>Passive: Object + will have been + verb-3 + by + Subject = The boy will have been helped by Marry</p>`,
     exercise: `<h2>Exercise - Essay</h2>
-      <div class="exercise">
-        <p>Change the active to the passive:</p>
-        <p><i>1. Tom opens the door.</i></p>
-        <textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
-        <p><i>2. Tom is opening the door.</i></p>
-        <textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
-        <p><i>3. Tom has opened the door.</i></p>
-        <textarea id="essay3" rows="3" placeholder="Tulis jawabanmu..."></textarea>
-        <br>
-        <button class="submit" onclick="checkEssay()">Periksa Jawaban</button>
-        <p id="essayResult"></p>
-      </div>`,
+  <div class="exercise">
+    <label for="studentName"><b>Nama:</b></label><br>
+    <input type="text" id="studentName" placeholder="Masukkan nama kamu..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;">
+    
+    <p>Change the active to the passive:</p>
+    <p><i>1. Tom opens the door.</i></p>
+    <textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+    <p><i>2. Tom is opening the door.</i></p>
+    <textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+    <p><i>3. Tom has opened the door.</i></p>
+    <textarea id="essay3" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+    <br>
+    <button class="submit" onclick="checkEssay()">Periksa Jawaban</button>
+    <p id="essayResult"></p>
+  </div>`
+
     test: `<h2>Test - Pilihan Ganda</h2>
       <div class="exercise">
         <p><b>1.</b> They drink coffee every morning. (Passive?)</p>
@@ -321,30 +325,40 @@
     }
 
     function checkEssay() {
-      let answers = {
-        essay1: "The door is opened by Tom.",
-        essay2: "The door is being opened by Tom.",
-        essay3: "The door has been opened by Tom."
-      };
+  let studentName = document.getElementById("studentName").value.trim();
+  if (studentName === "") {
+    alert("Harap isi nama terlebih dahulu!");
+    return;
+  }
 
-      let score = 0;
-      let total = 3;
-      let resultText = "";
+  let answers = {
+    essay1: "The door is opened by Tom.",
+    essay2: "The door is being opened by Tom.",
+    essay3: "The door has been opened by Tom."
+  };
 
-      for (let i=1; i<=total; i++) {
-        let userAnswer = document.getElementById("essay"+i).value.trim();
-        if (userAnswer.toLowerCase() === answers["essay"+i].toLowerCase()) {
-          resultText += `<p style="color:green">✅ Soal ${i}: Benar</p>`;
-          score++;
-        } else {
-          resultText += `<p style="color:red">❌ Soal ${i}: Salah<br>Jawaban benar: <b>${answers["essay"+i]}</b></p>`;
-        }
-      }
+  let score = 0;
+  let total = 3;
+  let resultText = "";
 
-      document.getElementById("essayResult").innerHTML = `
-        <h3>Hasil:</h3>${resultText}<p><b>Skor: ${score}/${total}</b></p>`;
+  for (let i=1; i<=total; i++) {
+    let userAnswer = document.getElementById("essay"+i).value.trim();
+    if (userAnswer.toLowerCase() === answers["essay"+i].toLowerCase()) {
+      resultText += `<p style="color:green">✅ Soal ${i}: Benar</p>`;
+      score++;
+    } else {
+      resultText += `<p style="color:red">❌ Soal ${i}: Salah<br>Jawaban benar: <b>${answers["essay"+i]}</b></p>`;
     }
+  }
+
+  document.getElementById("essayResult").innerHTML = `
+    <h3>Hasil:</h3>
+    <p><b>Nama:</b> ${studentName}</p>
+    ${resultText}
+    <p><b>Skor: ${score}/${total}</b></p>`;
+}
   </script>
 </body>
 </html>
+
 
