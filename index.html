@@ -149,9 +149,7 @@
     <aside id="sidebar">
       <h3>Menu</h3>
       <button onclick="showPage('home')">🏠 Home</button>
-      <li>
       <input type="text" id="searchBox" placeholder="🔍 Cari materi..." onkeyup="searchContent()">
-      </li>
       <button onclick="showPage('passive')">📘 Passive Voice</button>
       <div class="submenu">
         <button onclick="showPage('what')">- What is Passive Voice</button>
@@ -271,22 +269,7 @@
   }
 
     
-    function searchContent() {
-      let keyword = document.getElementById("searchBox").value.toLowerCase();
-      let content = document.getElementById("page-content");
-
-      // reset highlight dulu
-      let html = content.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
-
-      if (keyword.trim() === "") {
-        content.innerHTML = html; // kalau kosong reset
-        return;
-      }
-
-      // regex untuk highlight kata
-      let regex = new RegExp("(" + keyword + ")", "gi");
-      content.innerHTML = html.replace(regex, `<span class="highlight">$1</span>`);
-    }
+    
     function toggleMenu() {
       document.getElementById('sidebar').classList.toggle('active');
     }
@@ -301,79 +284,6 @@
       });
     });
 
-    function showPage(page) {
-      let content = document.getElementById("page-content");
-
-      if (page === "home") {
-        content.innerHTML = `<h2>Halaman Utama</h2>
-        <p>Selamat datang di blog belajar Passive Voice. Blog ini berisi materi lengkap, contoh, dan latihan soal.</p>`;
-      } else if (page === "what") {
-        content.innerHTML = `<h2>What is Passive Voice?</h2>
-        <p>Passive voice is when the subject receives the action, rather than doing it. The focus is on the result or the object, not the person or thing doing the action.</p>
-        <p>In active sentences, the subject (actor) performs the action, while in passive sentences, the subject (recipient) is subjected to the action.</p>`;
-      } else if (page === "example") {
-        content.innerHTML = `<h2>Example</h2>
-        <p><b>Active:</b> Mary helped the boy. (Mary (subject) helped (verb) the boy (object))</p>
-        <p><b>Passive:</b> The boy was helped by Mary. (The boy (subject) was helped (verb) by Mary)</p>`;
-      } else if (page === "use") {
-        content.innerHTML = `<h2>Using the Passive Voice</h2>
-        <p>Used when it is not known or not important to know exactly who performs an action.</p>
-        <p>Example: Rice is grown in India. (It is not important to know who grows the rice.)</p>
-        <p>The by-phrase is included only if it is important to know who performs an action. Example: Life on the Mississippi was written by Mark Twain.</p>
-        <p>If the speaker knows who performs an action, usually the active is used. Example: My aunt made this rug.</p>`;
-      } else if (page === "how") {
-        content.innerHTML = `<h2>How to Change Active to Passive</h2>
-        <p>Identify the object of the active voice sentence, make it the subject of the new sentence, and use a form of “to be” followed by the past participle of the main verb, often including the original subject introduced by “by.”</p>`;
-      } else if (page === "tenses") {
-        content.innerHTML = `<h2>Tenses</h2>
-        <p><b>Simple Present:</b> Active: Marry helps the boy → Passive: The boy is helped by Marry</p>
-        <p><b>Present Progressive:</b> Active: Marry is helping the boy → Passive: The boy is being helped by Marry</p>
-        <p><b>Past Progressive:</b> Active: Marry was helping the boy → Passive: The boy was being helped by Marry</p>
-        <p><b>Present Perfect:</b> Active: Marry has helped the boy → Passive: The boy has been helped by Marry</p>
-        <p><b>Simple Past:</b> Active: Marry helped the boy → Passive: The boy was helped by Marry</p>
-        <p><b>Past Perfect:</b> Active: Marry had helped the boy → Passive: The boy had been helped by Marry</p>
-        <p><b>Simple Future:</b> Active: Marry will help the boy → Passive: The boy will be helped by Marry</p>
-        <p><b>Going to Future:</b> Active: Marry is going to help the boy → Passive: The boy is going to be helped by Marry</p>
-        <p><b>Future Perfect:</b> Active: Marry will have helped the boy → Passive: The boy will have been helped by Marry</p>`;
-      } else if (page === "exercise") {
-        content.innerHTML = `<h2>Exercise - Essay</h2>
-        <div class="exercise">
-          <p>Change the active to the passive:</p>
-          <p><i>1. Tom opens the door.</i></p>
-          <textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
-          <p><i>2. Tom is opening the door.</i></p>
-          <textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
-          <p><i>3. Tom has opened the door.</i></p>
-          <textarea id="essay3" rows="3" placeholder="Tulis jawabanmu..."></textarea>
-          <br>
-          <button class="submit" onclick="checkEssay()">Periksa Jawaban</button>
-          <p id="essayResult"></p>
-        </div>`;
-      } else if (page === "test") {
-        content.innerHTML = `<h2>Test - Pilihan Ganda</h2>
-        <div class="exercise">
-          <p><b>1.</b> They drink coffee every morning. (Passive?)</p>
-          <label><input type="radio" name="q1" value="wrong"> Coffee is drank every morning by them.</label><br>
-          <label><input type="radio" name="q1" value="correct"> Coffee is drunk every morning by them.</label><br>
-          <label><input type="radio" name="q1" value="wrong"> Coffee was drunk every morning by them.</label><br>
-          <p id="ans1" style="color:red; display:none;"></p>
-
-          <p><b>2.</b> She wrote a letter yesterday. (Passive?)</p>
-          <label><input type="radio" name="q2" value="wrong"> A letter is written by her yesterday.</label><br>
-          <label><input type="radio" name="q2" value="correct"> A letter was written by her yesterday.</label><br>
-          <label><input type="radio" name="q2" value="wrong"> A letter were written by her yesterday.</label><br>
-          <p id="ans2" style="display:none;"></p>
-
-          <p><b>3.</b> The teacher explains the lesson. (Passive?)</p>
-          <label><input type="radio" name="q3" value="wrong"> The lesson was explained by the teacher.</label><br>
-          <label><input type="radio" name="q3" value="correct"> The lesson is explained by the teacher.</label><br>
-          <label><input type="radio" name="q3" value="wrong"> The lesson has explained by the teacher.</label><br>
-          <p id="ans3" style="display:none;"></p>
-          <br>
-          <button class="submit" onclick="checkAnswers()">Periksa Jawaban</button>
-        </div>`;
-      }
-    }
 
     function checkAnswers() {
       let score = 0;
@@ -433,4 +343,3 @@
   </script>
 </body>
 </html>
-
