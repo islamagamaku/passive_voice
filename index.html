@@ -201,40 +201,239 @@
       <p><b>Future Perfect Tense:</b> <br/>Active: Subject + will have + verb-3 + Object = Marry will have helped the boy <br/>Passive: Object + will have been + verb-3 + by + Subject = The boy will have been helped by Marry</p>`,
     exercise: `<h2>Exercise - Essay</h2>
   <div class="exercise">
-    <label for="studentName"><b>Nama:</b></label><br>
-    <input type="text" id="studentName" placeholder="Masukkan nama kamu..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;">
+    <label for="studentName"><b>Name:</b></label><br>
+    <input type="text" id="studentName" placeholder="insert name..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;">
     
     <p>Change the active to the passive:</p>
     <p><i>1. Tom opens the door.</i></p>
-    <textarea id="essay1" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+    <textarea id="essay1" rows="3" placeholder="Answer..."></textarea>
     <p><i>2. Tom is opening the door.</i></p>
-    <textarea id="essay2" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+    <textarea id="essay2" rows="3" placeholder="Answer..."></textarea>
     <p><i>3. Tom has opened the door.</i></p>
-    <textarea id="essay3" rows="3" placeholder="Tulis jawabanmu..."></textarea>
+    <textarea id="essay3" rows="3" placeholder="Answer..."></textarea>
     <br>
-    <button class="submit" onclick="checkEssay()">Periksa Jawaban</button>
+    <button class="submit" onclick="checkEssay()">Check Answer</button>
     <p id="essayResult"></p>
   </div>`,
 
-    test: `<h2>Test - Pilihan Ganda</h2>
+    test: `<h2>Test - Multiple choice</h2>
       <div class="exercise">
-        <p><b>1.</b> They drink coffee every morning. (Passive?)</p>
-        <label><input type="radio" name="q1" value="wrong"> Coffee is drank every morning by them.</label><br>
-        <label><input type="radio" name="q1" value="correct"> Coffee is drunk every morning by them.</label><br>
-        <label><input type="radio" name="q1" value="wrong"> Coffee was drunk every morning by them.</label><br>
-        <p id="ans1" style="color:red; display:none;"></p>
-        <p><b>2.</b> She wrote a letter yesterday. (Passive?)</p>
-        <label><input type="radio" name="q2" value="wrong"> A letter is written by her yesterday.</label><br>
-        <label><input type="radio" name="q2" value="correct"> A letter was written by her yesterday.</label><br>
-        <label><input type="radio" name="q2" value="wrong"> A letter were written by her yesterday.</label><br>
-        <p id="ans2" style="display:none;"></p>
-        <p><b>3.</b> The teacher explains the lesson. (Passive?)</p>
-        <label><input type="radio" name="q3" value="wrong"> The lesson was explained by the teacher.</label><br>
-        <label><input type="radio" name="q3" value="correct"> The lesson is explained by the teacher.</label><br>
-        <label><input type="radio" name="q3" value="wrong"> The lesson has explained by the teacher.</label><br>
-        <p id="ans3" style="display:none;"></p>
+        <label for="studentName"><b>Name:</b></label><br>
+    <input type="text" id="studentName" placeholder="insert name..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;">
+    
+        <p>1. The letter ___ by the secretary every Monday.</p>
+    <label><input type="radio" name="q1" value="A"> A. is sent</label><br>
+    <label><input type="radio" name="q1" value="B"> B. are sent</label><br>
+    <label><input type="radio" name="q1" value="C"> C. was send</label><br>
+    <label><input type="radio" name="q1" value="D"> D. were sent</label><br><br>
+    <p id="ans1"></p><br>
+
+    <p>2. The reports ___ carefully by the supervisor.</p>
+    <label><input type="radio" name="q2" value="A"> A. is checked</label><br>
+    <label><input type="radio" name="q2" value="B"> B. are checked</label><br>
+    <label><input type="radio" name="q2" value="C"> C. was checked</label><br>
+    <label><input type="radio" name="q2" value="D"> D. were check</label><br><br>
+    <p id="ans2"></p><br>
+
+    <p>3. A new rule ___ yesterday.</p>
+    <label><input type="radio" name="q3" value="A"> A. is announced</label><br>
+    <label><input type="radio" name="q3" value="B"> B. are announced</label><br>
+    <label><input type="radio" name="q3" value="C"> C. was announced</label><br>
+    <label><input type="radio" name="q3" value="D"> D. were announced</label><br><br>
+    <p id="ans3"></p><br>
+
+    <p>4. All the emails ___ before noon.</p>
+    <label><input type="radio" name="q4" value="A"> A. is replied</label><br>
+    <label><input type="radio" name="q4" value="B"> B. are replied</label><br>
+    <label><input type="radio" name="q4" value="C"> C. was replied</label><br>
+    <label><input type="radio" name="q4" value="D"> D. were replied</label><br><br>
+    <p id="ans4"></p><br>
+
+    <p>5. The package ___ to the wrong address last week.</p>
+    <label><input type="radio" name="q5" value="A"> A. is delivered</label><br>
+    <label><input type="radio" name="q5" value="B"> B. are delivered</label><br>
+    <label><input type="radio" name="q5" value="C"> C. was delivered</label><br>
+    <label><input type="radio" name="q5" value="D"> D. were delivered</label><br><br>
+    <p id="ans5"></p><br>
+
+    <p>6. Several proposals ___ at the last meeting.</p>
+    <label><input type="radio" name="q6" value="A"> A. is discussed</label><br>
+    <label><input type="radio" name="q6" value="B"> B. are discussed</label><br>
+    <label><input type="radio" name="q6" value="C"> C. was discussed</label><br>
+    <label><input type="radio" name="q6" value="D"> D. were discussed</label><br><br>
+    <p id="ans6"></p><br>
+
+    <p>7. The house ___ right now.</p>
+    <label><input type="radio" name="q7" value="A"> A. is being painted</label><br>
+    <label><input type="radio" name="q7" value="B"> B. are being painted</label><br>
+    <label><input type="radio" name="q7" value="C"> C. was being painted</label><br>
+    <label><input type="radio" name="q7" value="D"> D. were being painted</label><br><br>
+    <p id="ans7"></p><br>
+
+    <p>8. Many documents ___ for the seminar tomorrow.</p>
+    <label><input type="radio" name="q8" value="A"> A. is printed</label><br>
+    <label><input type="radio" name="q8" value="B"> B. are printed</label><br>
+    <label><input type="radio" name="q8" value="C"> C. was printed</label><br>
+    <label><input type="radio" name="q8" value="D"> D. were printed</label><br><br>
+    <p id="ans8"></p><br>
+
+    <p>9. Choose the correct sentence.</p>
+    <label><input type="radio" name="q9" value="A"> A. The cake by the chef was baked.</label><br>
+    <label><input type="radio" name="q9" value="B"> B. Was baked by the chef the cake.</label><br>
+    <label><input type="radio" name="q9" value="C"> C. The chef was baked the cake by.</label><br>
+    <label><input type="radio" name="q9" value="D"> D. The cake was baked by the chef.</label><br><br>
+    <p id="ans9"></p><br>
+
+    <p>10. Choose the correct sentence.</p>
+    <label><input type="radio" name="q10" value="A"> A. The window was by the wind broken.</label><br>
+    <label><input type="radio" name="q10" value="B"> B. Was the window broken by the wind.</label><br>
+    <label><input type="radio" name="q10" value="C"> C. The window was broken by the wind.</label><br>
+    <label><input type="radio" name="q10" value="D"> D. The wind was the window broken by.</label><br><br>
+    <p id="ans10"></p><br>
+
+    <p>11. Choose the correct sentence.</p>
+    <label><input type="radio" name="q11" value="A"> A. The books are arranged on the shelf by the librarian.</label><br>
+    <label><input type="radio" name="q11" value="B"> B. By the librarian are arranged the books on the shelf.</label><br>
+    <label><input type="radio" name="q11" value="C"> C. Arranged are the books by the librarian on the shelf.</label><br>
+    <label><input type="radio" name="q11" value="D"> D. The books by the librarian are arranged on the shelf.</label><br><br>
+    <p id="ans11"></p><br>
+
+    <p>12. Choose the correct sentence.</p>
+    <label><input type="radio" name="q12" value="A"> A. The homework was finished by the students on time.</label><br>
+    <label><input type="radio" name="q12" value="B"> B. By the students the homework was finished on time.</label><br>
+    <label><input type="radio" name="q12" value="C"> C. Finished the homework on time was by the students.</label><br>
+    <label><input type="radio" name="q12" value="D"> D. The students on time was finished the homework by.</label><br><br>
+    <p id="ans12"></p><br>
+
+    <p>13. Choose the correct sentence.</p>
+    <label><input type="radio" name="q13" value="A"> A. The song was sung beautifully by the choir.</label><br>
+    <label><input type="radio" name="q13" value="B"> B. Was beautifully the song sung by the choir.</label><br>
+    <label><input type="radio" name="q13" value="C"> C. Sung was the song beautifully by the choir.</label><br>
+    <label><input type="radio" name="q13" value="D"> D. Beautifully the song was sung by the choir.</label><br><br>
+    <p id="ans13"></p><br>
+
+    <p>14. Choose the correct sentence.</p>
+    <label><input type="radio" name="q14" value="A"> A. The car was repaired yesterday by the mechanic.</label><br>
+    <label><input type="radio" name="q14" value="B"> B. Was repaired yesterday the car by the mechanic.</label><br>
+    <label><input type="radio" name="q14" value="C"> C. Repaired the car was yesterday by the mechanic.</label><br>
+    <label><input type="radio" name="q14" value="D"> D. The mechanic yesterday by the car was repaired.</label><br><br>
+    <p id="ans14"></p><br>
+
+    <p>15. Choose the correct sentence.</p>
+    <label><input type="radio" name="q15" value="A"> A. The flowers were watered every morning by my mother.</label><br>
+    <label><input type="radio" name="q15" value="B"> B. Were watered every morning the flowers by my mother.</label><br>
+    <label><input type="radio" name="q15" value="C"> C. Watered were the flowers by my mother every morning.</label><br>
+    <label><input type="radio" name="q15" value="D"> D. Every morning my mother were watered the flowers.</label><br><br>
+    <p id="ans15"></p><br>
+
+    <p>16. Choose the correct sentence.</p>
+    <label><input type="radio" name="q16" value="A"> A. The invitation was sent to all the guests by the host.</label><br>
+    <label><input type="radio" name="q16" value="B"> B. Sent was the invitation by the host to all the guests.</label><br>
+    <label><input type="radio" name="q16" value="C"> C. The host was sent the invitation to all the guests.</label><br>
+    <label><input type="radio" name="q16" value="D"> D. All the guests the invitation was sent by the host.</label><br><br>
+    <p id="ans16"></p><br>
+
+    <p>17. The essay was ___ by Sarah.</p>
+    <label><input type="radio" name="q17" value="A"> A. writed</label><br>
+    <label><input type="radio" name="q17" value="B"> B. wrote</label><br>
+    <label><input type="radio" name="q17" value="C"> C. written</label><br>
+    <label><input type="radio" name="q17" value="D"> D. writing</label><br><br>
+    <p id="ans17"></p><br>
+
+    <p>18. The car was ___ last night.</p>
+    <label><input type="radio" name="q18" value="A"> A. stealed</label><br>
+    <label><input type="radio" name="q18" value="B"> B. stole</label><br>
+    <label><input type="radio" name="q18" value="C"> C. stolen</label><br>
+    <label><input type="radio" name="q18" value="D"> D. stealing</label><br><br>
+    <p id="ans18"></p><br>
+
+    <p>19. The message has been ___ to you.</p>
+    <label><input type="radio" name="q19" value="A"> A. sended</label><br>
+    <label><input type="radio" name="q19" value="B"> B. sent</label><br>
+    <label><input type="radio" name="q19" value="C"> C. sending</label><br>
+    <label><input type="radio" name="q19" value="D"> D. sends</label><br><br>
+    <p id="ans19"></p><br>
+
+    <p>20. The door was ___ by accident.</p>
+    <label><input type="radio" name="q20" value="A"> A. breaked</label><br>
+    <label><input type="radio" name="q20" value="B"> B. broke</label><br>
+    <label><input type="radio" name="q20" value="C"> C. broken</label><br>
+    <label><input type="radio" name="q20" value="D"> D. breaking</label><br><br>
+    <p id="ans20"></p><br>
+    <p>21. The floor was ___ this morning.</p>
+    <label><input type="radio" name="q21" value="A"> A. cleaned</label><br>
+    <label><input type="radio" name="q21" value="B"> B. clean</label><br>
+    <label><input type="radio" name="q21" value="C"> C. cleaning</label><br>
+    <label><input type="radio" name="q21" value="D"> D. cleans</label><br><br>
+    <p id="ans21"></p><br>
+
+    <p>22. The movie was ___ at 8 PM.</p>
+    <label><input type="radio" name="q22" value="A"> A. showed</label><br>
+    <label><input type="radio" name="q22" value="B"> B. showing</label><br>
+    <label><input type="radio" name="q22" value="C"> C. shown</label><br>
+    <label><input type="radio" name="q22" value="D"> D. shows</label><br><br>
+    <p id="ans22"></p><br>
+
+    <p>23. The assignment was ___ before the deadline.</p>
+    <label><input type="radio" name="q23" value="A"> A. submit</label><br>
+    <label><input type="radio" name="q23" value="B"> B. submitted</label><br>
+    <label><input type="radio" name="q23" value="C"> C. submitting</label><br>
+    <label><input type="radio" name="q23" value="D"> D. submits</label><br><br>
+    <p id="ans23"></p><br>
+
+    <p>24. The report was checked, edited, and ___ .</p>
+    <label><input type="radio" name="q24" value="A"> A. submit</label><br>
+    <label><input type="radio" name="q24" value="B"> B. submitting</label><br>
+    <label><input type="radio" name="q24" value="C"> C. submitted</label><br>
+    <label><input type="radio" name="q24" value="D"> D. submits</label><br><br>
+<p id="ans24"></p><br>
+
+    <p>25. The windows were cleaned, the floors were mopped, and the walls were ___ .</p>
+    <label><input type="radio" name="q25" value="A"> A. paint</label><br>
+    <label><input type="radio" name="q25" value="B"> B. painted</label><br>
+    <label><input type="radio" name="q25" value="C"> C. painting</label><br>
+    <label><input type="radio" name="q25" value="D"> D. paints</label><br><br>
+<p id="ans25"></p><br>
+
+    <p>26. The books were collected, the papers were sorted, and the desks were ___ .</p>
+    <label><input type="radio" name="q26" value="A"> A. arranging</label><br>
+    <label><input type="radio" name="q26" value="B"> B. arrange</label><br>
+    <label><input type="radio" name="q26" value="C"> C. arranged</label><br>
+    <label><input type="radio" name="q26" value="D"> D. arranges</label><br><br>
+<p id="ans26"></p><br>
+
+    <p>27. The packages were packed, labeled, and ___ .</p>
+    <label><input type="radio" name="q27" value="A"> A. ship</label><br>
+    <label><input type="radio" name="q27" value="B"> B. shipped</label><br>
+    <label><input type="radio" name="q27" value="C"> C. shipping</label><br>
+    <label><input type="radio" name="q27" value="D"> D. ships</label><br><br>
+    <p id="ans27"></p><br>
+
+    <p>28. The cake was baked, decorated, and ___ .</p>
+    <label><input type="radio" name="q28" value="A"> A. serve</label><br>
+    <label><input type="radio" name="q28" value="B"> B. serving</label><br>
+    <label><input type="radio" name="q28" value="C"> C. served</label><br>
+    <label><input type="radio" name="q28" value="D"> D. serves</label><br><br>
+<p id="ans28"></p><br>
+
+    <p>29. The emails were written, checked, and ___ .</p>
+    <label><input type="radio" name="q29" value="A"> A. send</label><br>
+    <label><input type="radio" name="q29" value="B"> B. sending</label><br>
+    <label><input type="radio" name="q29" value="C"> C. sent</label><br>
+    <label><input type="radio" name="q29" value="D"> D. sends</label><br><br>
+<p id="ans29"></p><br>
+
+    <p>30. The guests were greeted, seated, and ___ .</p>
+    <label><input type="radio" name="q30" value="A"> A. serve</label><br>
+    <label><input type="radio" name="q30" value="B"> B. served</label><br>
+    <label><input type="radio" name="q30" value="C"> C. serving</label><br>
+    <label><input type="radio" name="q30" value="D"> D. serves</label><br><br>
+
+<p id="ans30"></p><br>
+
+  
         <br>
-        <button class="submit" onclick="checkAnswers()">Periksa Jawaban</button>
+        <button class="submit" onclick="checkAnswers()">Check Answers</button>
       </div>`
   };
 
@@ -267,7 +466,7 @@
     } else if (keyword.trim() === "") {
       content.innerHTML = pages["home"];
     } else {
-      content.innerHTML = `<p>Tidak ditemukan hasil untuk "<b>${keyword}</b>"</p>`;
+      content.innerHTML = `<p>not found "<b>${keyword}</b>"</p>`;
     }
   }
 
@@ -293,41 +492,80 @@
     });
 
 
-    function checkAnswers() {
-      let score = 0;
-      let correctAnswers = {
-        q1: "Coffee is drunk every morning by them.",
-        q2: "A letter was written by her yesterday.",
-        q3: "The lesson is explained by the teacher."
-      };
+  let correctAnswers = {
+  q1: { option: "A", text: "is sent" },
+  q2: { option: "B", text: "are checked" },
+  q3: { option: "C", text: "was announced" },
+  q4: { option: "B", text: "are replied" },
+  q5: { option: "C", text: "was delivered" },
+  q6: { option: "D", text: "were discussed" },
+  q7: { option: "A", text: "is being painted" },
+  q8: { option: "B", text: "are printed" },
+  q9: { option: "D", text: "The cake was baked by the chef." },
+  q10: { option: "C", text: "The window was broken by the wind." },
+  q11: { option: "A", text: "The books are arranged on the shelf by the librarian." },
+  q12: { option: "A", text: "The homework was finished by the students on time." },
+  q13: { option: "A", text: "The song was sung beautifully by the choir." },
+  q14: { option: "A", text: "The car was repaired yesterday by the mechanic." },
+  q15: { option: "A", text: "The flowers were watered every morning by my mother." },
+  q16: { option: "A", text: "The invitation was sent to all the guests by the host." },
+  q17: { option: "C", text: "written" },
+  q18: { option: "C", text: "stolen" },
+  q19: { option: "B", text: "sent" },
+  q20: { option: "C", text: "broken" },
+  q21: { option: "A", text: "cleaned" },
+  q22: { option: "C", text: "shown" },
+  q23: { option: "B", text: "submitted" },
+  q24: { option: "C", text: "submitted" },
+  q25: { option: "B", text: "painted" },
+  q26: { option: "C", text: "arranged" },
+  q27: { option: "B", text: "shipped" },
+  q28: { option: "C", text: "served" },
+  q29: { option: "C", text: "sent" },
+  q30: { option: "B", text: "served" }
+};
 
-      for (let i=1; i<=3; i++) {
-        let q = document.querySelector('input[name="q'+i+'"]:checked');
-        let ans = document.getElementById("ans"+i);
+  function checkAnswers() {
+  let studentName = document.getElementById("studentName").value.trim();
+  if (studentName === "") {
+    alert("Please fill in your name first!");
+    return;
+  }
 
-        if (q) {
-          if (q.value === "correct") {
-            ans.style.color = "green";
-            ans.innerText = "✅ Jawaban benar!";
-            score++;
-          } else {
-            ans.style.color = "red";
-            ans.innerHTML = "❌ Jawaban salah. <br> Jawaban benar: <b>" + correctAnswers["q"+i] + "</b>";
-          }
-          ans.style.display = "block";
-        } else {
-          ans.style.color = "orange";
-          ans.innerText = "⚠️ Belum memilih jawaban.";
-          ans.style.display = "block";
-        }
+  let score = 0;
+  let total = Object.keys(correctAnswers).length;
+  let resultText = "";
+
+  for (let i = 1; i <= total; i++) {
+    let q = document.querySelector('input[name="q' + i + '"]:checked');
+    let correct = correctAnswers["q" + i];
+
+    if (q) {
+      if (q.value === correct.option) {
+        resultText += `<p style="color:green">✅ Question ${i}: Correct (${correct.text})</p>`;
+        score++;
+      } else {
+        resultText += `<p style="color:red">❌ Question ${i}: Wrong<br>Correct answer: <b>${correct.option}. ${correct.text}</b></p>`;
       }
-      alert("Skor kamu: " + score + "/3");
+    } else {
+      resultText += `<p style="color:orange">⚠️ Question ${i}: No answer<br>Correct answer: <b>${correct.option}. ${correct.text}</b></p>`;
     }
+  }
+
+  document.getElementById("page-content").innerHTML += `
+    <div style="margin-top:20px;padding:15px;border:1px solid #ccc;border-radius:8px;background:#f9f9f9">
+      <h3>Results:</h3>
+      <p><b>Name:</b> ${studentName}</p>
+      ${resultText}
+      <p><b>Score: ${score}/${total}</b></p>
+    </div>`;
+}
+
 
     function checkEssay() {
   let studentName = document.getElementById("studentName").value.trim();
   if (studentName === "") {
-    alert("Harap isi nama terlebih dahulu!");
+    alert("Please fill in your name first!");
     return;
   }
 
@@ -344,15 +582,15 @@
   for (let i=1; i<=total; i++) {
     let userAnswer = document.getElementById("essay"+i).value.trim();
     if (userAnswer.toLowerCase() === answers["essay"+i].toLowerCase()) {
-      resultText += `<p style="color:green">✅ Soal ${i}: Benar</p>`;
+      resultText += `<p style="color:green">✅ Question ${i}: Correct</p>`;
       score++;
     } else {
-      resultText += `<p style="color:red">❌ Soal ${i}: Salah<br>Jawaban benar: <b>${answers["essay"+i]}</b></p>`;
+      resultText += `<p style="color:red">❌ Question ${i}: Wrong<br>Correct answer: <b>${answers["essay"+i]}</b></p>`;
     }
   }
 
   document.getElementById("essayResult").innerHTML = `
-    <h3>Hasil:</h3>
+    <h3>Results:</h3>
     <p><b>Nama:</b> ${studentName}</p>
     ${resultText}
     <p><b>Skor: ${score}/${total}</b></p>`;
@@ -360,6 +598,3 @@
   </script>
 </body>
 </html>
-
-
-
